@@ -12,6 +12,10 @@ Your result must be a string.
 
 ```javascript
 function reverseString(str) {
+  
+  // .split('') converts str to array and save each char to array elements
+  // .reverse() reverts the sequence of array elements
+  // .join('') combines array elements to string
   return str.split('').reverse().join('');
 }
 
