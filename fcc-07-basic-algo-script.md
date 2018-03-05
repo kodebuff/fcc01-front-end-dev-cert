@@ -95,3 +95,76 @@ function findLongestWord(str) {
 }
 ```
 
+
+
+**Title Case a Sentence**
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+```javascript
+function titleCase(str) {
+  //convert string to lowercase 
+  var strLow = str.toLowerCase();
+  
+  //store each word in array
+  var strArr = strLow.split(" ");
+  
+  //reiterate each array element
+  for (var i = 0; i < strArr.length; i++) {
+    
+    // capitalize each first letter of array
+    strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].substr(1);
+  }
+  
+  // convert array to string
+  var strStr = strArr.join(" ");
+  
+  return strStr;
+}
+
+titleCase("I'm a little tea pot");
+```
+
+
+
+**Return Largest Numbers in Arrays**
+
+Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+```javascript
+function largestOfFour(arr) {
+  var num = 0;
+  var largeNum = 0;
+  var largeNumArr = [];
+  
+  // scan through arrays
+  for (var i = 0; i < arr.length; i++) {
+    
+    // scan elements of sub array 
+    for (var j = 0; j < arr[i].length; j++) {
+      
+      // assign value to a variable
+      num = arr[i][j];
+      
+      // get the largest number and store it in largeNum
+      if (num > largeNum) {
+        largeNum = num;
+      }
+    }
+    
+    // save large number in large number array
+    largeNumArr.push(largeNum);
+    
+    // reset the value of the large number for next array element to use
+    largeNum = 0;
+  }
+  
+  // display large numbers array
+  return largeNumArr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+```
+
