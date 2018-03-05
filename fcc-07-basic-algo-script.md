@@ -188,3 +188,51 @@ function confirmEnding(str, target) {
 confirmEnding("Bastian", "n");
 ```
 
+
+
+**Truncate a string**
+
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a `...` ending.
+
+Note that inserting the three dots to the end will add to the string length.
+
+However, if the given maximum string length `num` is less than or equal to 3, then the addition of the three dots does not add to the string length in determining the truncated string.
+
+```javascript
+function truncateString(str, num) {
+/******************************************************************  
+  // MY SOLUTION:
+  var modStr = "";
+  var lastThreeStr = "";
+  
+  // cut string from num place
+  modStr = str.slice(0, num);
+  
+  if (num >= str.length) {
+    return str;
+  }
+  
+  if (num <= 3) {
+    return modStr.concat("...");
+  } else {
+    // remove last 3 chars and replace it with ...
+    return modStr.substring(0, (modStr.length - 3)).concat("...");
+  }
+******************************************************************/
+  
+  if (str.length > num && num > 3) {
+    return str.slice(0, (num - 3)) + '...';
+  } else if (str.length > num && num <= 3) {
+    return str.slice(0, num) + '...';
+  } else {
+    return str;
+  }  
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
+```
+
+
+
+
+
