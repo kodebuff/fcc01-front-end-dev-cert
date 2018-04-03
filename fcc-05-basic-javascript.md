@@ -1,5 +1,42 @@
 # FCC Basic Javascript
 
+**Manipulate Arrays - Push** 
+
+`push()` - function that appends data to the end of an array.
+
+`.push()` takes one or more parameters and "pushes" them onto the end of the array.
+
+```javascript
+var arr = [1,2,3];
+arr.push(4);
+// arr is now [1,2,3,4]
+```
+
+
+
+**Manipulate Arrays - Pop**
+
+`.pop()` is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable.
+
+Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
+
+For example, for the code `var oneDown = [1, 4, 6].pop();`
+the variable `oneDown` now holds the value `6` and the array becomes `[1, 4]`.
+
+
+
+**Manipulate Arrays - Shift** 
+
+It works just like `.pop()`, except it removes the first element instead of the last.
+
+
+
+**Manipulate Arrays - Unshift**
+
+`.unshift()` works exactly like `.push()`, but instead of adding the element at the end of the array, `unshift()` adds the element at the beginning of the array.
+
+
+
 **Stand In Line**
 
 ```javascript
@@ -255,8 +292,6 @@ var expression = /\S/g;
 // This code counts the matches of expression in testString
 var nonSpaceCount = testString.match(expression).length;
 ```
-
-
 
 
 
